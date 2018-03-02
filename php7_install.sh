@@ -5,7 +5,7 @@ yum -y update
 
 # set version of php to install
 # check opcache extension directory if you change this
-phpVersion='7.2.2'
+phpVersion='7.2.3'
 
 # install dependencies
 yum -y groupinstall "Development Tools"
@@ -56,7 +56,7 @@ with='memory_limit = 1024M'
 sed -i "s/$repl/$with/g" $file
 
 repl=';date.timezone ='
-with='date.timezone = America\/Boise'
+with='date.timezone = America\/New York'
 sed -i "s/$repl/$with/g" $file
 
 repl='error_reporting = E_ALL \& \~E_DEPRECATED \& \~E_STRICT'
