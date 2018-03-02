@@ -56,7 +56,7 @@ with='memory_limit = 1024M'
 sed -i "s/$repl/$with/g" $file
 
 repl=';date.timezone ='
-with='date.timezone = America\/New York'
+with='date.timezone = America\/New_York'
 sed -i "s/$repl/$with/g" $file
 
 repl='error_reporting = E_ALL \& \~E_DEPRECATED \& \~E_STRICT'
