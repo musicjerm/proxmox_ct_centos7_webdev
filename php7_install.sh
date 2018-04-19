@@ -98,7 +98,7 @@ chmod +x /etc/init.d/php-fpm
 # navigate back to starting directory
 cd $workingDir
 cd ..
-echo "all done, you may delete working directory\n $workingDir"
+echo -e "all done, you may delete working directory\n $workingDir"
 
 # enable php-fpm service
 /sbin/chkconfig php-fpm on
