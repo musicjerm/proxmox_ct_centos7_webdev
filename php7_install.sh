@@ -23,8 +23,7 @@ cd working
 workingDir=`pwd`
 
 # install bzip
-wget -O bzip.tar.gz http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz
-tar -zxvf bzip.tar.gz
+git clone https://github.com/enthought/bzip2-1.0.6.git
 cd bzip2-1.0.6
 make
 make install
