@@ -5,7 +5,7 @@ yum -y update
 
 # set version of php to install
 # check opcache extension directory if you change this
-phpVersion='7.2.7'
+phpVersion='7.2.9'
 
 # install dependencies
 yum -y groupinstall "Development Tools"
