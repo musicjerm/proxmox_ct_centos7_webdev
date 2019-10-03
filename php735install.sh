@@ -6,7 +6,7 @@ yum -y update
 
 # set version of php to install
 # check opcache extension directory if you change this
-phpVersion='7.3.5'
+phpVersion='7.3.10'
 
 # install / enable EPEL
 yum -y install epel-release
