@@ -27,22 +27,31 @@ mkdir working
 cd working
 workingDir=`pwd`
 
-# install libzip (1.4.0 is compatible with php-7.3 - current version 1.5.3, is not)
-wget https://github.com/nih-at/libzip/archive/rel-1-4-0.tar.gz
-tar -zxvf rel-1-4-0.tar.gz
-cd libzip-rel-1-4-0
-mkdir build
-cd build
-cmake3 ..
+# install bzip
+git clone https://github.com/enthought/bzip2-1.0.6.git
+cd bzip2-1.0.6
 make
 make install
-cd ../..
+cd ..
+
+# install libzip (1.4.0 is compatible with php-7.3 - current version 1.5.3, is not)
+# wget https://github.com/nih-at/libzip/archive/rel-1-4-0.tar.gz
+# tar -zxvf rel-1-4-0.tar.gz
+# cd libzip-rel-1-4-0
+# mkdir build
+# cd build
+# cmake3 ..
+# make
+# make install
+# cd ../..
 
 # install php
-wget -O php.tar.gz http://us2.php.net/get/php-$phpVersion.tar.gz/from/this/mirror
-tar -zxvf php.tar.gz
-cd php-$phpVersion
-./configure --with-curl --with-pdo-mysql --with-zlib --with-gd --with-openssl --enable-zip --enable-fpm --enable-mbstring --enable-intl --enable-opcache
+#wget -O php.tar.gz http://us2.php.net/get/php-$phpVersion.tar.gz/from/this/mirror
+wget https://github.com/php/php-src/archive/php-$phpVersion.tar.gz
+tar -zxvf php-$phpVersion.tar.gz
+cd php-src-php-$phpVersion
+./buildconf --force
+./configure --with-curl --with-pdo-mysql --with-zlib --with-gd --with-openssl --enable-zip --enable-fpm --enable-mbstring --enable-intl --enable-opcache --without-libzip
 make
 make install
 
