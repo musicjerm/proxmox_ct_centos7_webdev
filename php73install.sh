@@ -9,7 +9,7 @@ yum -y update
 phpVersion='7.3.10'
 
 # install / enable EPEL
-yum -y install epel-release
+# yum -y install epel-release
 
 # install dependencies
 yum -y groupinstall "Development Tools"
@@ -19,7 +19,7 @@ yum -y install libicu-devel
 yum -y install libxml2-devel
 yum -y install libpng-devel
 yum -y install libjpeg-devel
-yum -y install cmake3 cmake --enablerepo=epel
+# yum -y install cmake3 cmake --enablerepo=epel
 yum -y install openssl-devel
 
 # create working directory
